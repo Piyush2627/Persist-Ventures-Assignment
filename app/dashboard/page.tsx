@@ -1,27 +1,39 @@
-"use client";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import React from "react";
+import Link from "next/link";
 
 function Dashboard() {
-  const { data, isError, isLoading } = useQuery({
-    queryKey: ["Posts"],
-    queryFn: async () => {
-      const response = await axios.get("/api/admin/dashboard");
-      return response.data.dashboard;
-    },
-  });
+  return (
+    <div>
+      <section className="text-white">
+        <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+              Welcome to
+              <span className="text-7xl sm:block"> Social Verse App </span>
+            </h1>
+            <div className="text-zinc-500">Manage. Monitor. Analyze.</div>
+            <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+              Welcome, Admin! Your centralized dashboard for efficient
+              management and in-depth analytics of Social Verse App is here.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link href="/dashboard">
+                <button className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto">
+                  Get Started
+                </button>
+              </Link>
 
-  console.log(data);
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error loading data</div>;
-  }
-  console.log();
-
-  return <div>{data.userMetrics.daily.totalUser}</div>;
+              <a
+                className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                href="#"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
 export default Dashboard;

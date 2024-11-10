@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import ReactQueryProvider from "@/components/ReactQueryProvider";
 
@@ -10,8 +9,8 @@ export default function RootLayout({
   return (
     <ReactQueryProvider>
       <html lang="en">
-        <body>
-          <div>This is a new component!</div> {children}
+        <body className="bg-zinc-900 text-zinc-200">
+       {children}
         </body>
       </html>
     </ReactQueryProvider>

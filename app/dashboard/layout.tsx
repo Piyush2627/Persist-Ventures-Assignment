@@ -1,16 +1,16 @@
+import SideBar from "@/components/SideBar";
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      <div>
-        sidebar
-        <button>
-          <Link href={"/dashboard/nested"}>go to nested</Link>
-        </button>
+    <div className="">
+      <div className="flex">
+        <div className="">
+          <SideBar />
+        </div>
+        <div className="container mx-auto max-w-full">{children}</div>
       </div>
-      {children}
     </div>
   );
 }
