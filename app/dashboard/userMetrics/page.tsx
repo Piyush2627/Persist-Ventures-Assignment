@@ -1,10 +1,8 @@
 "use client";
 import Card from "@/components/Card";
-import DashboardLayout from "@/components/DashboardLayout";
+import UserMetricsDashboardLayout from "@/app/dashboard/userMetrics/UserMetricsDashboardLayout";
 import { useDashboardData } from "@/hooks/useDashboardData";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 
 function UserMetrics() {
   const { data, isError, isLoading } = useDashboardData();
@@ -20,7 +18,7 @@ function UserMetrics() {
   return (
     <div>
       <Card>
-        <DashboardLayout />
+        <UserMetricsDashboardLayout />
       </Card>
     </div>
   );

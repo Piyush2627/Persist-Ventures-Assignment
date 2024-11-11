@@ -17,7 +17,6 @@ function MetricsCard({ type, counts }: MetricsCardProps) {
           {counts}
         </h4>
       </div>
-      <div className="border-t border-zinc-800 p-4"></div>
     </div>
   );
 }
