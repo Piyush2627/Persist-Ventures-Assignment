@@ -16,8 +16,10 @@ function ContentLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto px-4 py-6 lg:h-screen">
       <div>
-        <h1 className="text-4xl font-semibold">Dashboard</h1>
-        <p className="w-1/2 text-sm">
+        <h1 className="group-hover:motion-scale-in-50 motion-ease-spring-bounciest text-4xl font-semibold">
+          Dashboard
+        </h1>
+        <p className=" w-1/2 text-sm delay-75">
           Welcome, Admin! Your centralized dashboard for efficient management
           and in-depth analytics of Social Verse App is here.{" "}
         </p>

@@ -2,7 +2,6 @@ import React from "react";
 import SimpleLineChart from "./SimpleLineChart";
 import { useDashboardData } from "@/hooks/useDashboardData";
 import MetricCard from "./MetricCard";
-import Card from "./Card";
 
 function DashboardLayout() {
   const { data, isLoading, isError } = useDashboardData();

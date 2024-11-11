@@ -27,7 +27,6 @@ export default function SimpleLineChart({
   title,
   data,
   xLabel,
-  yLabel,
   color = "#4F46E5",
 }: SimpleLineChartProps) {
   const [chartData, setChartData] = useState<ChartData[]>([]);

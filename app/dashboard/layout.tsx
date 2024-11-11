@@ -1,6 +1,5 @@
 import SideBar from "@/components/SideBar";
-import Link from "next/link";
-import React, { ReactNode } from "react";
+import React from "react";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (

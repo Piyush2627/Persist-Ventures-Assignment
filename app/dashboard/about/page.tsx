@@ -1,7 +1,4 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import React from "react";
 
 function page() {
   return (
@@ -229,7 +226,7 @@ function page() {
                   >
                     <use href="#ai:ph:check-circle-fill"></use>
                   </svg>
-                  <span className="text-sm">Data Security &amp; Privacy</span>
+                  <span className="text-sm">Data Security Privacy</span>
                 </li>
               </ul>
               <div className="mt-6 flex items-center gap-4">
