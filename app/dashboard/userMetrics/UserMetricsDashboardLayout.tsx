@@ -91,18 +91,11 @@ function userMetricsDashboardLayout() {
             key={metric.title}
             title={metric.title}
             value={metric.value}
-            description={`Total ${metric.title.toLowerCase()} on the platform.`}
             color={metric.color}
           />
         ))}
       </div>
-
-      <div className="mt-8 flex justify-between">
-        <MetricsSection sectionTitle="Daily" metrics={dailyMetrics} />
-        <MetricsSection sectionTitle="Monthly" metrics={monthlyMetrics} />
-      </div>
-
-      <div className="flex space-x-4 rounded pt-2">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="w-full rounded">
           <SimpleLineChart
             title="Daily User Metrics"
@@ -119,6 +112,11 @@ function userMetricsDashboardLayout() {
             yLabel="User Count"
           />
         </div>
+      </div>
+
+      <div className="mt-8 flex flex-col justify-between gap-6 sm:flex-row sm:gap-8">
+        <MetricsSection sectionTitle="Daily" metrics={dailyMetrics} />
+        <MetricsSection sectionTitle="Monthly" metrics={monthlyMetrics} />
       </div>
     </div>
   );

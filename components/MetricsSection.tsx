@@ -19,9 +19,9 @@ const MetricsSection: React.FC<MetricsSectionProps> = ({
   metrics,
 }) => {
   return (
-    <div className="sm:w-1/2">
+    <div className="w-full rounded border border-zinc-700 p-6">
       <h1 className="text-4xl font-semibold">{sectionTitle}</h1>
-      <div className="mt-2 flex space-x-4">
+      <div className=" ">
         {metrics.map((metric) => (
           <DashboardMetricsCard
             key={metric.title}

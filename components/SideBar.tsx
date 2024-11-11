@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import React, { useState } from "react";
 import { CgMenuLeft } from "react-icons/cg";
@@ -30,7 +29,7 @@ function SideBar() {
   };
 
   return (
-    <div className="flex h-20 items-center rounded border-zinc-800 p-4 sm:h-screen sm:flex-col sm:border-r">
+    <div className="sticky top-0 flex h-20 items-center rounded border-zinc-800 p-4 sm:top-0 sm:z-10 sm:h-screen sm:flex-col sm:border-r">
       {/* Toggle Button */}
       <button
         className="size-12 items-center justify-center rounded border border-zinc-800 bg-zinc-900 px-2 align-middle sm:hidden"

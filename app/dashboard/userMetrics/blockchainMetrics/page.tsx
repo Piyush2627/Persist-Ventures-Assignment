@@ -1,8 +1,8 @@
 "use client";
 import Card from "@/components/Card";
-import ContentMetricsDashboardLayout from "@/app/dashboard/userMetrics/ContentMetrics/ContentMetricsDashboardLayout";
 import { useDashboardData } from "@/hooks/useDashboardData";
 import React from "react";
+import BlockMetricsDashboardLayout from "./BlockMetricsDashboardLayout";
 
 function BlockChain() {
   const { data, isError, isLoading } = useDashboardData();
@@ -17,7 +17,7 @@ function BlockChain() {
   return (
     <div>
       <Card>
-        <ContentMetricsDashboardLayout />
+        <BlockMetricsDashboardLayout />
       </Card>
     </div>
   );

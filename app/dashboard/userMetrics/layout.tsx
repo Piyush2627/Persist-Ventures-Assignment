@@ -1,6 +1,7 @@
 "use client";
 import MetricsCard from "@/components/MetricsCard";
 import { useDashboardData } from "@/hooks/useDashboardData";
+import { FaAddressCard } from "react-icons/fa6";
 import Link from "next/link";
 
 function ContentLayout({ children }: { children: React.ReactNode }) {
@@ -28,25 +29,25 @@ function ContentLayout({ children }: { children: React.ReactNode }) {
         <Link href={"/dashboard/userMetrics"}>
           <MetricsCard
             type="Users"
-            counts={data.userMetrics.allTime.totalUser}
+            Icon={<FaAddressCard className="size-8" />}
           />
         </Link>
         <Link href={"/dashboard/userMetrics/ContentMetrics"}>
           <MetricsCard
             type="Content"
-            counts={data.contentMetrics.allTime.totalPosts}
+            Icon={<FaAddressCard className="size-8" />}
           />
         </Link>
         <Link href={"/dashboard/userMetrics/blockchainMetrics"}>
           <MetricsCard
             type="Block"
-            counts={data.contentMetrics.allTime.totalPosts}
+            Icon={<FaAddressCard className="size-8" />}
           />
         </Link>
         <Link href={"/dashboard/userMetrics/engagementMetrics"}>
           <MetricsCard
             type="Engagement"
-            counts={data.contentMetrics.allTime.totalPosts}
+            Icon={<FaAddressCard className="size-8" />}
           />
         </Link>
       </div>{" "}

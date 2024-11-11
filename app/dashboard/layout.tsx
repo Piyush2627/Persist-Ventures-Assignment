@@ -4,7 +4,7 @@ import React from "react";
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="">
-      <div className="block sm:flex">
+      <div className="block overflow-x-hidden sm:flex">
         <div className="">
           <SideBar />
         </div>

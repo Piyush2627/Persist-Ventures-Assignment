@@ -21,7 +21,6 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ value, max }) => {
 interface MetricCardProps {
   title: string;
   value: number | string;
-  description: string;
   isPercentage?: boolean;
   color: string;
   showProgressBar?: boolean;
@@ -31,7 +30,6 @@ interface MetricCardProps {
 const MetricCard: React.FC<MetricCardProps> = ({
   title,
   value,
-  description,
   isPercentage = false,
   color,
   showProgressBar = false,
@@ -41,15 +39,18 @@ const MetricCard: React.FC<MetricCardProps> = ({
 
   return (
     <div
-      className="flex flex-col items-center justify-between rounded-lg border-l-4 bg-zinc-800 p-6 shadow-md"
+      className="flex flex-col items-center justify-between rounded-lg border-l-4 bg-zinc-800 p-6 shadow-md sm:p-4 md:p-6 lg:p-8"
       style={{ borderColor: color }}
     >
-      <h3 className="text-lg font-semibold text-zinc-200">{title}</h3>
-      <p className="text-4xl font-bold text-zinc-200">{displayValue}</p>
+      <h3 className="text-lg font-semibold text-zinc-200 sm:text-base md:text-lg lg:text-xl">
+        {title}
+      </h3>
+      <p className="text-4xl font-bold text-zinc-200 sm:text-3xl md:text-4xl lg:text-5xl">
+        {displayValue}
+      </p>
       {showProgressBar && max && (
         <ProgressBar value={Number(value)} max={max} />
       )}
-      <p className="text-sm text-zinc-500">{description}</p>
     </div>
   );
 };

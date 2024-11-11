@@ -1,10 +1,10 @@
 import React from "react";
-import SimpleLineChart from "../../../../components/SimpleLineChart";
 import { useDashboardData } from "@/hooks/useDashboardData";
 import MetricCard from "../../../../components/MetricCard";
 import MetricsSection from "../../../../components/MetricsSection";
+import SimpleLineChart from "../../../../components/SimpleLineChart";
 
-function BlockMetricsDashboardLayout() {
+function ContentMetricsDashboardLayout() {
   const { data, isLoading, isError } = useDashboardData();
 
   if (isLoading) return <div>Loading...</div>;
@@ -12,26 +12,22 @@ function BlockMetricsDashboardLayout() {
 
   const allTimeMetrics = [
     {
-      title: "Total Users",
+      title: "Total Posts",
       value: data.contentMetrics.allTime.totalPosts,
       color: "#4F46E5",
     },
     {
-      title: "Active Users",
-      value: (
-        (data.contentMetrics.allTime.totalCategory /
-          data.contentMetrics.allTime.totalPosts) *
-        100
-      ).toFixed(2),
+      title: "Total Category",
+      value: data.contentMetrics.allTime.totalCategory,
       color: "#F59E0B",
     },
     {
-      title: "Total Referrals",
+      title: "Total Post Exit Count",
       value: data.contentMetrics.allTime.totalPostExitCount,
       color: "#10B981",
     },
     {
-      title: "totalPostSharess",
+      title: "totalPostShares",
       value: data.contentMetrics.allTime.totalPostShares,
       color: "#3B82F6",
     },
@@ -91,18 +87,11 @@ function BlockMetricsDashboardLayout() {
             key={metric.title}
             title={metric.title}
             value={metric.value}
-            description={`Total ${metric.title.toLowerCase()} on the platform.`}
             color={metric.color}
           />
         ))}
       </div>
-
-      <div className="mt-8 flex justify-between">
-        <MetricsSection sectionTitle="Daily" metrics={dailyMetrics} />
-        <MetricsSection sectionTitle="Monthly" metrics={monthlyMetrics} />
-      </div>
-
-      <div className="flex space-x-4 rounded pt-2">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="w-full rounded">
           <SimpleLineChart
             title="Daily User Metrics"
@@ -120,8 +109,13 @@ function BlockMetricsDashboardLayout() {
           />
         </div>
       </div>
+
+      <div className="mt-8 flex flex-col justify-between gap-6 sm:flex-row sm:gap-8">
+        <MetricsSection sectionTitle="Daily" metrics={dailyMetrics} />
+        <MetricsSection sectionTitle="Monthly" metrics={monthlyMetrics} />
+      </div>
     </div>
   );
 }
 
-export default BlockMetricsDashboardLayout;
+export default ContentMetricsDashboardLayout;

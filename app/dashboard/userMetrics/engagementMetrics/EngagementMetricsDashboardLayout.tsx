@@ -12,73 +12,84 @@ function EngagementMetricsDashboardLayout() {
 
   const allTimeMetrics = [
     {
-      title: "Total Users",
+      title: "Total Likes",
       value: data.engagementMetrics.allTime.totalLikes,
       color: "#4F46E5",
     },
     {
-      title: "Active Users",
-      value: (
-        (data.engagementMetrics.allTime.totalCategory /
-          data.engagementMetrics.allTime.totalLikes) *
-        100
-      ).toFixed(2),
+      title: "Total  Views",
+      value: data.engagementMetrics.allTime.totalViews,
       color: "#F59E0B",
     },
     {
-      title: "Total Referrals",
-      value: data.engagementMetrics.allTime.totalViews,
+      title: "Total  Notifications",
+      value: data.engagementMetrics.allTime.totalNotifications,
       color: "#10B981",
     },
     {
-      title: "totalNotificationss",
-      value: data.engagementMetrics.allTime.totalNotifications,
+      title: "Total Message",
+      value: data.engagementMetrics.allTime.totalMessage,
+      color: "#3B82F6",
+    },
+    {
+      title: "Private Chats",
+      value: data.engagementMetrics.allTime.privateChats,
       color: "#3B82F6",
     },
   ];
 
   const dailyMetrics = [
     {
-      title: "Total Users",
+      title: "Total links",
       value: data.engagementMetrics.daily.totalLikes,
       color: "#10B981",
     },
     {
-      title: "Active Users",
-      value: data.engagementMetrics.daily.totalCategory,
-      color: "#10B981",
-    },
-    {
-      title: "Referrals",
+      title: "Total Views",
       value: data.engagementMetrics.daily.totalViews,
       color: "#10B981",
     },
     {
-      title: "Created",
+      title: "Total Notifications",
       value: data.engagementMetrics.daily.totalNotifications,
+      color: "#10B981",
+    },
+    {
+      title: "Total Message",
+      value: data.engagementMetrics.daily.totalMessage,
+      color: "#10B981",
+    },
+    {
+      title: "Private Chats",
+      value: data.engagementMetrics.daily.privateChats,
       color: "#10B981",
     },
   ];
 
   const monthlyMetrics = [
     {
-      title: "Total Users",
+      title: "Total Likes",
       value: data.engagementMetrics.monthly.totalLikes,
       color: "#10B981",
     },
     {
-      title: "Active Users",
-      value: data.engagementMetrics.monthly.totalCategory,
-      color: "#10B981",
-    },
-    {
-      title: "Referrals",
+      title: "Total Viewer",
       value: data.engagementMetrics.monthly.totalViews,
       color: "#10B981",
     },
     {
-      title: "Created",
+      title: "Total Notifications",
       value: data.engagementMetrics.monthly.totalNotifications,
+      color: "#10B981",
+    },
+    {
+      title: "rivate Chats",
+      value: data.engagementMetrics.monthly.privateChats,
+      color: "#10B981",
+    },
+    {
+      title: "Total Message",
+      value: data.engagementMetrics.monthly.totalMessage,
       color: "#10B981",
     },
   ];
@@ -91,18 +102,11 @@ function EngagementMetricsDashboardLayout() {
             key={metric.title}
             title={metric.title}
             value={metric.value}
-            description={`Total ${metric.title.toLowerCase()} on the platform.`}
             color={metric.color}
           />
         ))}
       </div>
-
-      <div className="mt-8 flex justify-between">
-        <MetricsSection sectionTitle="Daily" metrics={dailyMetrics} />
-        <MetricsSection sectionTitle="Monthly" metrics={monthlyMetrics} />
-      </div>
-
-      <div className="flex space-x-4 rounded pt-2">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="w-full rounded">
           <SimpleLineChart
             title="Daily User Metrics"
@@ -119,6 +123,10 @@ function EngagementMetricsDashboardLayout() {
             yLabel="User Count"
           />
         </div>
+      </div>
+      <div className="mt-8 flex flex-col justify-between gap-6 sm:flex-row sm:gap-8">
+        <MetricsSection sectionTitle="Daily" metrics={dailyMetrics} />
+        <MetricsSection sectionTitle="Monthly" metrics={monthlyMetrics} />
       </div>
     </div>
   );
